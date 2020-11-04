@@ -1,0 +1,60 @@
+h2 {
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+p {
+    line-height: 1.6em;
+}
+
+.content {
+  max-width: 1200px;
+  text-align: center;
+  margin: auto;
+}
+
+.tbls,
+    .tbls {
+    margin-bottom: 2em;
+    text-align: center;
+    max-width: 1200px;
+}
+
+.block {
+    border: 1px solid #ddd;
+    margin: 0 0.5em 2em;
+}
+
+.tbl-t .tbl {
+    background: #418241;
+    color: #fff;
+}
+
+.tbl-f .tbl {
+    background: #9a2218;
+    color: #fff;
+}
+
+.tbl-n .tbl {
+    background: #777777;
+    color: #fff;
+}
+
+.tbl {
+    background: #fff;
+    color: #000;
+}
+    .tbl h2 {
+        margin: 0;
+        padding-top: 2em;
+        font-size: 1em;
+        font-weight: normal;
+
+    }
+
+.tbl-val {
+    font-size: 6em;
+    margin: 0.2em 0 0;
+    font-weight: 100;
+}
