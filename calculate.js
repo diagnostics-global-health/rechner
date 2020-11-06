@@ -1,10 +1,10 @@
 function calc(){
-    var incid = 1e-5 * parseFloat(document.getElementById('incid').value);
+    var incid = 1e-5 * parseFloat(document.getElementById('incid').value.replace(',','.'));
     var sample = 1000;
     var cp = incid * sample;
     var cn = sample - cp;
-    var sp = 0.01 * parseFloat(document.getElementById('spec').value);
-    var se = 0.01 * parseFloat(document.getElementById('sens').value);
+    var sp = 0.01 * parseFloat(document.getElementById('spec').value.replace(',','.'));
+    var se = 0.01 * parseFloat(document.getElementById('sens').value.replace(',','.'));
     var tp = se * cp;
     var fp = cn * (1.0 - sp);
     var tn = sp * cn;
