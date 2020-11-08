@@ -26,25 +26,40 @@ function validIncidence(x){
     return true;
 }
 
-function calc(){
-    var icid_parsed = parseNum(document.getElementById('incid').value);
-    if(!validIncidence(icid_parsed)){
-        icid_parsed = 100000;
-        document.getElementById('incid').value = icid_parsed;
+function getIncidence(){
+    var incid_parsed = parseNum(document.getElementById('incid').value);
+    if(!validIncidence(incid_parsed)){
+        incid_parsed = 100000;
+        document.getElementById('incid').value = incid_parsed;
     }
+    document.getElementById("incid_parsed").innerHTML = incid_parsed;
+    return 1e-5 * incid_parsed;
+}
+
+function getSpecificity(){
     var sp_parsed = parseNum(document.getElementById('spec').value);
     if(!validPercentage(sp_parsed)){
         sp_parsed = 100;
         document.getElementById('spec').value = sp_parsed;
     }
+    document.getElementById("sp_parsed").innerHTML = sp_parsed;
+    return 0.01 * sp_parsed;
+}
+
+function getSensitivity(){
     var se_parsed = parseNum(document.getElementById('sens').value);
     if(!validPercentage(se_parsed)){
         se_parsed = 100;
         document.getElementById('sens').value = se_parsed;
     }
-    var incid = 1e-5 * icid_parsed;
-    var sp = 0.01 * sp_parsed;
-    var se = 0.01 * se_parsed;
+    document.getElementById("se_parsed").innerHTML = se_parsed;
+    return 0.01 * se_parsed;
+}
+
+function calc(){
+    var incid = getIncidence();
+    var sp = getSpecificity();
+    var se = getSensitivity();
     var sample = 1000;
     var cp = incid * sample;
     var cn = sample - cp;
@@ -54,9 +69,6 @@ function calc(){
     var fn = cp * (1.0 - se);
     var ppv = tp / (tp + fp);
     var npv = tn / (tn + fn);
-    document.getElementById("icid_parsed").innerHTML = icid_parsed;
-    document.getElementById("sp_parsed").innerHTML = sp_parsed;
-    document.getElementById("se_parsed").innerHTML = se_parsed;
     document.getElementById("tp").innerHTML = toInt(tp);
     document.getElementById("tn").innerHTML = toInt(tn);
     document.getElementById("fp").innerHTML = toInt(fp);
