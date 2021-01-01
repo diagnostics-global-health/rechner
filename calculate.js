@@ -77,9 +77,7 @@ function calc(){
     document.getElementById("npv").innerHTML = toPercent(npv);
 }
 
-$(document).ready(function(){
+$(function () {
   calc();
-  $('input').keyup(function(){
-    calc();
-  });
+  $('input').on('keyup', calc);
 });
