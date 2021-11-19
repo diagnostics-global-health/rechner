@@ -1,4 +1,4 @@
-# rechner
+# [rechner](https://diagnostics-global-health.github.io/rechner/)
 
 A simple calculator to convert the sensitivity and specificity of a SARS-CoV-2
 rapid antigen test, as listed at https://diagnosticsglobalhealth.org/,
